@@ -6,6 +6,7 @@ class Banda(models.Model):
     def __str__(self):
         return self.nome
 
+
 class Palco(models.Model):
     nome = models.CharField(max_length=100)
 
@@ -27,4 +28,4 @@ class Concerto(models.Model):
     palco = models.ForeignKey(Palco, on_delete=models.CASCADE, related_name="concertos")
 
     def __str__(self):
-        return f"{self.banda} - {self.dia}"
+        return f"{self.banda} - {self.palco}"
